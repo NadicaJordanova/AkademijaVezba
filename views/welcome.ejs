@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akademii List</title>
+</head>
+<body>
+  <h1>Список на Академии</h1>
+<div style="display: grid; grid-template-columns: repeat(4, 400px); gap: 10px;">
+    <% if (akademii && akademii.length > 0) { %>
+        <% akademii.forEach(akademija => { %>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid black; width: 400px; height: 500px; border-radius: 15px;">
+                <h2><%= akademija.ime %></h2>
+                <h4><%= akademija.adresa %></h4>
+            </div>
+         
+        <% }) %>
+      <% } else { %>
+        <p>Нема достапни академии во моментот.</p>
+      <% } %>
+</div>
+
+</body>
+</html>
