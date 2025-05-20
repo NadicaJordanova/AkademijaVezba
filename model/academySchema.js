@@ -8,7 +8,13 @@ const akademijaSchema = new mongoose.Schema({
   adresa: {
     type: String,
     required: [true, "Adresata e zadolzitelna"],
-  }
+  },
+  kursovi: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Kurs",
+    }
+  ] 
 });
 
 const Akademija = mongoose.model("Akademija", akademijaSchema);

@@ -5,7 +5,8 @@ exports.createAkademija = async (req, res) => {
 
     const novaAkademija = await Akademija.create({
       ime : req.body.ime,
-      adresa: req.body.adresa
+      adresa: req.body.adresa,
+      kursovi : req.body.kursovi
     });
     res.status(200).json({
       status: "Success",
@@ -39,7 +40,7 @@ exports.updateAkademija = async (req, res) => {
 
 exports.getAkademii = async (req, res) => {
     try{
-    const Akademii = await Akademija.find()
+    const Akademii = await Akademija.find().populate('kursovi')
       res.status(200).json({
         status: "Success",
         akademii: Akademii,
