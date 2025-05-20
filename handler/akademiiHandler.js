@@ -3,7 +3,10 @@ const Akademija = require("../model/academySchema");
 exports.createAkademija = async (req, res) => {
   try {
 
-    const novaAkademija = await Akademija.create(req.body);
+    const novaAkademija = await Akademija.create({
+      ime : req.body.ime,
+      adresa: req.body.adresa
+    });
     res.status(200).json({
       status: "Success",
       akademija: novaAkademija,
