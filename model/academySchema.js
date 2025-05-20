@@ -8,7 +8,7 @@ const akademijaSchema = new mongoose.Schema({
   adresa: {
     type: String,
     required: [true, "Adresata e zadolzitelna"],
-  },
+  }
 });
 
 const Akademija = mongoose.model("Akademija", akademijaSchema);
